@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="LearningMAUI.DefaultTheme">
+
+    <!--
+        Colours:
+        #051821 - Blue Grey
+        #1A4645 - Dark Slate
+        #266867 - Slate
+        #F58800 - Orange
+        #F8BC24 - Washed out Orange
+    -->
+    <Color x:Key="PageBackgroundColor">#051821</Color>
+    <Color x:Key="NavigationBarColor">#F58800</Color>
+    <Color x:Key="Primary">#F58800</Color>
+    <Color x:Key="Secondary">#266867</Color>
+    <Color x:Key="Tertiary">#1A4645</Color>
+    <Color x:Key="PrimaryTextColor">#F8BC24</Color>
+    <Color x:Key="SecondaryTextColor">#F58800</Color>
+    <Color x:Key="TertiaryTextColor">#F58800</Color>
+    <Color x:Key="TransparentColor">Transparent</Color>
+
+
+    <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
+    <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>
+    <SolidColorBrush x:Key="TertiaryBrush" Color="{StaticResource Tertiary}"/>
+
+
+    <Style TargetType="Shell" ApplyToDerivedTypes="true">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Default={StaticResource Tertiary}}" />
+        <Setter Property="ForegroundColor" Value="{AppThemeBinding Default={StaticResource Secondary}}" />
+        <Setter Property="TitleColor" Value="{AppThemeBinding Default={StaticResource PrimaryTextColor}}" />
+        <Setter Property="DisabledColor" Value="{AppThemeBinding Default={StaticResource PageBackgroundColor}}" />
+        <Setter Property="UnselectedColor" Value="{AppThemeBinding Default={StaticResource Tertiary}}" />
+        <Setter Property="NavBarHasShadow" Value="True" />
+        <Setter Property="TabBarBackgroundColor" Value="{AppThemeBinding Default={StaticResource Tertiary}}" />
+        <Setter Property="TabBarForegroundColor" Value="{AppThemeBinding Default={StaticResource Secondary}}" />
+        <Setter Property="TabBarTitleColor" Value="{AppThemeBinding Default={StaticResource SecondaryTextColor}}" />
+        <Setter Property="TabBarUnselectedColor" Value="{AppThemeBinding Default={StaticResource Tertiary}}" />
+    </Style>
+
+    <Style TargetType="NavigationPage">
+        <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Default={StaticResource Secondary}}" />
+        <Setter Property="BarTextColor" Value="{AppThemeBinding Default={StaticResource SecondaryTextColor}}" />
+        <Setter Property="IconColor" Value="{AppThemeBinding Default={StaticResource Primary}}" />
+    </Style>
+
+    <Style TargetType="TabbedPage">
+        <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Default={StaticResource Secondary}}" />
+        <Setter Property="BarTextColor" Value="{AppThemeBinding Default={StaticResource SecondaryTextColor}}" />
+        <Setter Property="UnselectedTabColor" Value="{AppThemeBinding Default={StaticResource Tertiary}}" />
+        <Setter Property="SelectedTabColor" Value="{AppThemeBinding Default={StaticResource PrimaryTextColor}}" />
+    </Style>
+</ResourceDictionary>

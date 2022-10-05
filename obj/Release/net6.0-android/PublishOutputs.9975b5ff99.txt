@@ -1,0 +1,3 @@
+C:\Users\Komdex\Desktop\LearningMAUI\bin\Release\net6.0-android\publish\com.companyname.learningmaui-Signed.aab
+C:\Users\Komdex\Desktop\LearningMAUI\bin\Release\net6.0-android\publish\com.companyname.learningmaui.aab
+C:\Users\Komdex\Desktop\LearningMAUI\bin\Release\net6.0-android\publish\com.companyname.learningmaui-Signed.apk
