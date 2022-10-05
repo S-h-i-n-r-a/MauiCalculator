@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using Java.Nio.Channels;
+using System.Globalization;
 
 namespace LearningMAUI;
 
@@ -17,6 +18,58 @@ public partial class MainPage : ContentPage
     {
         _equation.Add(c);
         lblEquation.Text = new string(_equation.ToArray());
+    }
+
+    private void PerformMultDiv(List<double> numbers, List<char> operators)
+    {
+        for (int i = 0; i < operators.Count; ++i)
+        {
+            char op = operators[i];
+
+            if (op == '÷')
+            {
+                numbers[i] = numbers[i] / numbers[i + 1];
+                numbers.RemoveAt(i + 1);
+                operators.RemoveAt(i);
+                PerformMultDiv(numbers, operators);
+                return;
+            }
+
+            else if (op == '×')
+            {
+                numbers[i] = numbers[i] * numbers[i + 1];
+                numbers.RemoveAt(i + 1);
+                operators.RemoveAt(i);
+                PerformMultDiv(numbers, operators);
+                return;
+            }
+        }
+    }
+
+    private void PerformAddSub(List<double> numbers, List<char> operators)
+    {
+        for (int i = 0; i < operators.Count; ++i)
+        {
+            char op = operators[i];
+
+            if (op == '-')
+            {
+                numbers[i] = numbers[i] - numbers[i + 1];
+                numbers.RemoveAt(i + 1);
+                operators.RemoveAt(i);
+                PerformAddSub(numbers, operators);
+                return;
+            }
+
+            else if (op == '+')
+            {
+                numbers[i] = numbers[i] + numbers[i + 1];
+                numbers.RemoveAt(i + 1);
+                operators.RemoveAt(i);
+                PerformAddSub(numbers, operators);
+                return;
+            }
+        }
     }
 
     private double EvaluateEquation()
@@ -72,44 +125,10 @@ public partial class MainPage : ContentPage
         }
 
         // Perform multiplication and division
-        for (int i = 0; i < operators.Count; ++i)
-        {
-            char op = operators[i];
-
-            if (op == '÷')
-            {
-                numbers[i] = numbers[i] / numbers[i + 1];
-                numbers.RemoveAt(i + 1);
-                operators.RemoveAt(i);
-            }
-
-            else if (op == '×')
-            {
-                numbers[i] = numbers[i] * numbers[i + 1];
-                numbers.RemoveAt(i + 1);
-                operators.RemoveAt(i);
-            }
-        }
+        PerformMultDiv(numbers, operators);
 
         // Perform addition and subtraction
-        for (int i = 0; i < operators.Count; ++i)
-        {
-            char op = operators[i];
-
-            if (op == '-')
-            {
-                numbers[i] = numbers[i] - numbers[i + 1];
-                numbers.RemoveAt(i + 1);
-                operators.RemoveAt(i);
-            }
-
-            else if (op == '+')
-            {
-                numbers[i] = numbers[i] + numbers[i + 1];
-                numbers.RemoveAt(i + 1);
-                operators.RemoveAt(i);
-            }
-        }
+        PerformAddSub(numbers, operators);
 
         return numbers[0];
     }
