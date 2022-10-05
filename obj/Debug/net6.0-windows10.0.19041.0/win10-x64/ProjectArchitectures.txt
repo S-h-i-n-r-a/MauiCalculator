@@ -1,1 +1,0 @@
-G:\Stages\Casper Born\DotNET Maui\LearningMAUI\LearningMAUI.csproj;x64

@@ -3,9 +3,9 @@
   <PropertyGroup>
     <ActiveDebugFramework>net6.0-android</ActiveDebugFramework>
     <IsFirstTimeProjectOpen>False</IsFirstTimeProjectOpen>
-    <ActiveDebugProfile>phone_m-dpi_5_1in_-_api_32 (Android 12.1 - API 32)</ActiveDebugProfile>
-    <SelectedPlatformGroup>PhysicalDevice</SelectedPlatformGroup>
-    <DefaultDevice>pixel_5_-_api_31</DefaultDevice>
+    <ActiveDebugProfile>Phone M-DPI 5.1in - API 32 (Android 12.1 - API 32)</ActiveDebugProfile>
+    <SelectedPlatformGroup>Emulator</SelectedPlatformGroup>
+    <DefaultDevice>phone_m-dpi_5_1in_-_api_32</DefaultDevice>
   </PropertyGroup>
   <ItemGroup>
     <MauiXaml Update="DefaultTheme.xaml">
